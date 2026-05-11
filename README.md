@@ -12,6 +12,57 @@ Students often self-reject from internships, placements, insight schemes, schola
 
 Opportunity Decoder analyses a target opportunity against a student's current evidence. It shows what they already have, what hidden evidence they are not communicating well, which gaps are blocking readiness, and which actions will move them fastest towards a credible application.
 
+## Use Case Diagram
+
+The diagram below presents a simplified SysML-style use case view of Opportunity Decoder. It shows the two primary actors, the main system use cases, and the advisor's role in reviewing and verifying the AI-generated roadmap.
+
+```mermaid
+flowchart LR
+
+    seeker[Career Seeker]
+    advisor[Career Advisor]
+
+    subgraph system[Opportunity Decoder]
+        direction TB
+
+        UC1([Provide career information<br/>Paste job description<br/>Provide career goal])
+        UC3([Upload CV and experiences])
+        UC4([Generate readiness analysis])
+        UC5([View personalised roadmap])
+        UC6([Track readiness progress])
+        
+        UC10([Review student profile])
+        UC11([Review AI-generated analysis])
+        UC12([Verify roadmap recommendations])
+
+
+        UC16([Generate readiness score])
+        UC17([Identify skill and evidence gaps])
+        UC18([Identify hidden evidence])
+        UC19([Generate roadmap])
+        UC20([Generate CV and interview suggestions])
+
+    end
+
+    seeker --- UC1
+    seeker --- UC3
+    seeker --- UC4
+    seeker --- UC5
+    seeker --- UC6
+
+    advisor --- UC10
+    advisor --- UC11
+    advisor --- UC12
+
+    UC4 -.-> UC16
+    UC4 -.-> UC17
+    UC4 -.-> UC18
+    UC4 -.-> UC19
+    UC4 -.-> UC20
+
+
+```
+
 ## What makes it innovative
 
 This is not just a CV writer or job matcher. The core idea is opportunity access through evidence mapping and readiness roadmapping. The product helps students see that projects, societies, mentoring, coursework, volunteering, part-time work, and hackathons can all become career evidence when framed clearly and honestly.
